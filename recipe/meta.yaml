@@ -12,17 +12,15 @@ source:
 build:
   noarch: python
   number: 0
-  skip: true
+  script: {{ PYTHON }} -m pip install ./quetz_client --no-deps -vv
   entry_points:
     - quetz-client = quetz_client:main
-  script: {{ PYTHON }} -m pip install ./quetz_client --no-deps -vv
 
 requirements:
   host:
     - python >=3.6
     - pip
     - setuptools
-
   run:
     - python >=3.6
     - requests >=2,<3
