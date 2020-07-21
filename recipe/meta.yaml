@@ -1,5 +1,5 @@
 {% set name = "quetz-client" %}
-{% set version = "0.0.2" %}
+{% set version = "0.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/TheSnakePit/quetz/archive/client_v{{ version }}.tar.gz
-  sha256: 9577513ac2ab9b90afc149406c7670f81a7112341950d2493851784da9e72f00
+  sha256: 87106d8385f563feb1ef1d437c8d6a3fbf9ddeea449f9815da34f2f4fdd3f768
 
 build:
   noarch: python
