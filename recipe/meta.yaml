@@ -1,46 +1,46 @@
 {% set name = "quetz-client" %}
-{% set version = "0.0.4" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/TheSnakePit/quetz/archive/client_v{{ version }}.tar.gz
-  sha256: a1311832360352a557e59b956a6cf9b9d077590ae324a2fadc7bed0507b349bf
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quetz_client-{{ version }}.tar.gz
+  sha256: e5ac7afe11d3c7160eb9d0780fdbdba051565d852d0bae4bbe34fcd88fcc4eb5
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  script: {{ PYTHON }} -m pip install ./quetz_client --no-deps -vv
-  entry_points:
-    - quetz-client = quetz_client:main
 
 requirements:
   host:
-    - python >=3.6
-    - pip
+    - python >=3.8
     - setuptools
+    - wheel
+    - pip
   run:
-    - python >=3.6
-    - requests >=2,<3
-    - conda-verify >=3,<4
-    - conda-build >=3,<4
+    - python >=3.8
+    - fire
+    - requests
 
 test:
   imports:
     - quetz_client
   commands:
-    - quetz-client -h
+    - pip check
+  requires:
+    - pip
 
 about:
-  home: https://github.com/TheSnakePit/quetz
+  home: https://github.com/mamba-org/quetz-client
+  summary: A Python client to interact with a Quetz server.
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
-  summary: A client for the Quetz package server
 
 extra:
   recipe-maintainers:
     - mariobuikhuizen
     - wolfv
+    - janjagusch
