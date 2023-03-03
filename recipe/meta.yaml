@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://github.com/mamba-org/quetz-client
-  description: A Python client to interact with a Quetz server.
+  summary: A Python client to interact with a Quetz server.
   license: BSD-3-Clause
   license_file: LICENSE
 
