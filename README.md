@@ -1,11 +1,11 @@
-About quetz-client
-==================
+About quetz-client-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/quetz-client-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/mamba-org/quetz-client
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/quetz-client-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python client to interact with a Quetz server.
 

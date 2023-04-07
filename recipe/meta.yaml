@@ -1,5 +1,5 @@
 {% set name = "quetz-client" %}
-{% set version = "0.2.1" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/quetz_client-{{ version }}.tar.gz
-  sha256: aec9d50f8beb3ff0db86e62cbd5c0aeec42b5ba1c5ada9eb0d54c2d1e5b5f00b
+  sha256: c1652c4be97909322bf36b0cf28aaf9547da853b9e7b2aad43306c35c1a5c9b6
 
 build:
   noarch: python
