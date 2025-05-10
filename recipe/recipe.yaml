@@ -1,0 +1,57 @@
+schema_version: 1
+
+context:
+  name: quetz-client
+  version: 0.5.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/quetz_client-${{ version }}.tar.gz
+  sha256: c955f6e60f08340a42e30d15b318d54e1c70dd8be3cf454a195db30f6414c4e4
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - quetz-client = quetz_client.cli:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - fire
+    - requests
+    - dacite
+
+tests:
+  - python:
+      imports:
+        - quetz_client
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pip check
+
+about:
+  summary: A Python client to interact with a Quetz server.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/mamba-org/quetz-client
+
+extra:
+  recipe-maintainers:
+    - mariobuikhuizen
+    - wolfv
+    - janjagusch
